@@ -1,7 +1,7 @@
 import IncomeSvg from "../../assets/income.svg";
 import OutcomeSvg from "../../assets/outcome.svg";
 import TotalSvg from "../../assets/total.svg";
-import { useTransactions } from "../../contexts/Transactions";
+import { useTransactions } from "../../hooks/useTransactions";
 
 import { Container } from "./styles";
 

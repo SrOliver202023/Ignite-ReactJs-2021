@@ -7,7 +7,7 @@ import CloseSvg from "../../assets/close.svg";
 import IncomeSvg from "../../assets/income.svg";
 import OutcomeSvg from "../../assets/outcome.svg";
 import React, { useState } from "react";
-import { useTransactions } from "../../contexts/Transactions";
+import { useTransactions } from "../../hooks/useTransactions";
 
 interface NewTransactionModalProps {
   isOpen: boolean;
