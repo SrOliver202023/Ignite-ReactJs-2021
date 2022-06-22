@@ -7,7 +7,7 @@ import CloseSvg from "../../assets/close.svg";
 import IncomeSvg from "../../assets/income.svg";
 import OutcomeSvg from "../../assets/outcome.svg";
 import React, { useState } from "react";
-import { api } from "../../services/api";
+import { useTransactions } from "../../contexts/Transactions";
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -22,6 +22,8 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState("");
 
+  const { createTransaction } = useTransactions();
+
   function handleSetTypeDeposit() {
     setType("deposit");
   }
@@ -32,14 +34,12 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
   function handleCreateNewTransaction(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     window.alert("Success!");
-
-    const newTransaction = {
+    createTransaction({
       title,
-      type,
-      amount,
       category,
-    };
-    api.post("/transactions", newTransaction);
+      amount,
+      type,
+    });
   }
 
   return (

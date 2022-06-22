@@ -2,8 +2,7 @@ import { useTransactions } from "../../contexts/Transactions";
 import { Container } from "./styles";
 
 export function TransactionsTable() {
-  const transactions = useTransactions();
-  console.log(transactions);
+  const { transactions } = useTransactions();
   return (
     <Container>
       <table>
