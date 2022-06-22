@@ -31,15 +31,21 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
     setType("withdraw");
   }
 
-  function handleCreateNewTransaction(event: React.FormEvent<HTMLFormElement>) {
+  async function handleCreateNewTransaction(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.alert("Success!");
-    createTransaction({
+    await createTransaction({
       title,
       category,
       amount,
       type,
     });
+
+    setType("deposit");
+    setTitle("");
+    setAmount(0);
+    setCategory("");
+
+    onRequestClose();
   }
 
   return (
