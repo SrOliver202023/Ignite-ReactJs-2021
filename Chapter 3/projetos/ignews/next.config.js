@@ -2,8 +2,9 @@
 const nextConfig = {
 	reactStrictMode: false,
 	typescript: {
-		tsconfigPath: "src/tsconfig.json",
+		tsconfigPath: "tsconfig.json",
 		ignoreBuildErrors: true,
+		generateEtags: false,
 	},
 };
 
