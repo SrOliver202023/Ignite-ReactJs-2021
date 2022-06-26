@@ -1,4 +1,10 @@
 {
+  "moduleResolution": "node",
+  "resolveJsonModule": false,
+}
+
+
+{
   "compilerOptions": {
     "moduleResolution": "node",
     "target": "es5",
@@ -15,7 +21,7 @@
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "isolatedModules": true,
     "jsx": "preserve"
   },
