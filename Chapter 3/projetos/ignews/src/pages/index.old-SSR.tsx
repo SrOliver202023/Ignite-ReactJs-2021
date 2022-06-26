@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
 import styles from "./home.module.scss";
 
@@ -42,7 +42,7 @@ export default function Home({ product }: Props) {
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	// const price = await stripe.prices.retrieve("price_1LEwu4K3SrZQZ3noF316VMvy", {
 	// 	expand: ["product"],
 	// });
@@ -60,6 +60,5 @@ export const getStaticProps: GetStaticProps = async () => {
 		props: {
 			product,
 		},
-		revalidate: 60 * 60 * 24, // 24 hours
 	};
 };
