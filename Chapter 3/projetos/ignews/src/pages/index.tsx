@@ -17,7 +17,6 @@ interface Props {
 export default function Home({ product }: Props) {
 	const { amount, priceId } = product;
 
-	console.log(priceId);
 	return (
 		<>
 			<Head>
